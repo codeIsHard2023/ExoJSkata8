@@ -11,7 +11,11 @@
 // console.log(nomDeMaFonction(On remplace le paramètre par ce qu'on désire)) // 
 
 // CODE ICI
+const calc = (a, b) => {
+    return (a * b) * 2;
+}
 
+console.log(calc(2,3));
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
 
@@ -22,7 +26,12 @@
 // console.log(monTableau[0]) // 1
 
 // CODE ICI
+const firstArrayElement = (someArray) => {
+    return someArray[0];
+}
 
+const myFirstArray = [1,2,3,4,5];
+console.log(firstArrayElement(myFirstArray));
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
 
@@ -34,6 +43,13 @@
 // console.log(monTableau) // [1, 2]
 
 // CODE ICI
+const lastElementDelete = (someArray) => {
+    return someArray.pop()
+}
+const mySecondArray = [1,2,3,4,5];
+console.log(`tableau avant appel de fonction : ${mySecondArray}`);
+lastElementDelete(mySecondArray);
+console.log(`tableau après appel de fonction : ${mySecondArray}`);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 4
@@ -47,7 +63,15 @@
 // }
 
 // CODE ICI
-
+const arrayElementSum = (someArray) => {
+    let sum = 0;
+    for (let i = 0; i < someArray.length; i++){
+        sum = sum + someArray[i]; 
+    }
+    return sum;
+}
+const myThirdArray = [1,2,3,4,5];
+console.log(arrayElementSum(myThirdArray))
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 5
@@ -62,7 +86,17 @@
 //Maintenant que la string est inversée il faut la remettre en string avec la méthode join().
 
 // CODE ICI
+const inversedString = (sentence) => {
+    const myArray = sentence.split('');
+    console.log(myArray);
+    const myInversedArray = myArray.reverse();
+    console.log(myInversedArray);
+    const newString = myInversedArray.join('')
+    console.log(newString)
 
+}
+const myString = "Hello";
+inversedString(myString);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 6
@@ -73,7 +107,11 @@
 // console.log(Math.max(...monTableau)) // 3
 
 // CODE ICI
-
+const biggestNumber = (someArray) => {
+    console.log(Math.max(...someArray));
+}
+const monArray = [1, 2, 3];
+biggestNumber(monArray)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 7
@@ -84,7 +122,11 @@
 // console.log(Math.min(...monTableau)) // 1
 
 // CODE ICI
-
+const smallestNumber = (someArray) => {
+    console.log(Math.min(...someArray));
+}
+const monTableau = [1, 2, 3];
+smallestNumberestNumber(monTableau)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 8
@@ -100,7 +142,19 @@
 // })
 
 // CODE ICI
+const newString = (someString) => {
+    const transitionTable = someString.split('');
+    console.log(transitionTable);
+    const myTransitionTableFilter = transitionTable.filter((element) => {
+        return element !=="e" && element !== "o"
+    })
+    console.log(myTransitionTableFilter)
+    const transformedSentence = myTransitionTableFilter.join('');
+    console.log(transformedSentence)
+}
 
+const sentenceToTransform = "Hello"
+newString(sentenceToTransform);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 9
