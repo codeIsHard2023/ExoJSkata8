@@ -15,7 +15,7 @@ const calc = (a, b) => {
     return (a * b) * 2;
 }
 
-console.log(calc(2,3));
+console.log(`exo 1 : ${calc(2,3)}`);
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
 
@@ -31,7 +31,7 @@ const firstArrayElement = (someArray) => {
 }
 
 const myFirstArray = [1,2,3,4,5];
-console.log(firstArrayElement(myFirstArray));
+console.log(`exo 2 : ${firstArrayElement(myFirstArray)}`);
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
 
@@ -126,7 +126,7 @@ const smallestNumber = (someArray) => {
     console.log(Math.min(...someArray));
 }
 const monTableau = [1, 2, 3];
-smallestNumberestNumber(monTableau)
+smallestNumber(monTableau)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 8
@@ -142,6 +142,7 @@ smallestNumberestNumber(monTableau)
 // })
 
 // CODE ICI
+console.log("exo 8");
 const newString = (someString) => {
     const transitionTable = someString.split('');
     console.log(transitionTable);
@@ -166,6 +167,18 @@ newString(sentenceToTransform);
 // console.log(monTableau.sort()) // [1, 2, 3]
 
 // CODE ICI
+console.log("exo 9");
+
+const sortArray = (someArray) => {
+    someArray.sort((a,b) => a-b);
+    console.log(someArray);
+}
+
+let fourthArray = [5, 10, 8, 91, 1]
+// fourthArray.sort((a,b) => a-b);
+// console.log(fourthArray)
+sortArray(fourthArray);
+
 
 //----------------------------------------------------------------------------------------------//
 
@@ -183,6 +196,20 @@ newString(sentenceToTransform);
 // console.log(monTableau) // ["Hello", "elloH", "lloHe", "loHel", "oHell"]
 
 // CODE ICI
+console.log("exo 10")
+
+const stringIntoArray = (someString) => {
+    for (let i=0; i< someString.length; i++){
+        const myStringRotation = someString.substring(i) + someString.substring(0, i);
+        myNewTable.push(myStringRotation);   
+    }
+    console.log(myNewTable)
+}
+
+const myNewString = "Hello";
+const myNewTable = [];
+
+stringIntoArray(myNewString)
 
 //----------------------------------------------------------------------------------------------//
 
@@ -197,7 +224,17 @@ newString(sentenceToTransform);
 // })
 
 // CODE ICI
+console.log('exo 11')
 
+const elementAdding = (someArray) => {
+    const myArrayToEdit = someArray.map((element) => {
+        return element + 5; 
+    } )
+    console.log(myArrayToEdit);
+}
+
+const myFifthArray = [2,3,4];
+elementAdding(myFifthArray);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 12
@@ -211,6 +248,18 @@ newString(sentenceToTransform);
 // })
 
 // CODE ICI
+console.log('exo 12'); 
+
+const elementLength = (someArray) => {
+    const myTableLength = someArray.map((element)=>{
+        return element.length;
+    })
+    console.log(myTableLength)
+
+}
+
+const mySixthArray = ["Hello", "World", "Charlie", "Chocolate"];
+elementLength(mySixthArray)
 
 //----------------------------------------------------------------------------------------------//
 
@@ -226,7 +275,17 @@ newString(sentenceToTransform);
 // })
 
 // CODE ICI
+console.log("exo 13");
 
+const firstElementString = (someArray) => {
+    const firstElementArray = someArray.map((element) => {
+        return element.charAt(0);
+    }) 
+    console.log(firstElementArray)
+}
+
+const mySeventhArray = ["Hello", "World"];
+firstElementString(mySeventhArray);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 14
