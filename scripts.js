@@ -296,7 +296,15 @@ firstElementString(mySeventhArray);
 
 
 // CODE ICI
+const myNewTable2 = (someArray) => {
+    const myLastArrayElement = someArray.map((element) => {
+        return element.charAt(element.length-1);
+    }) 
+    console.log("Exo 14 :" + myLastArrayElement)
+}
 
+const myEigthArray = ["Hello", "World"];
+myNewTable2(myEigthArray)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 15
@@ -306,7 +314,17 @@ firstElementString(mySeventhArray);
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la longueur de la string. Incice : la méthode length() permet de récupérer la longueur d'une string.
 
 // CODE ICI
-
+const longStringReturn = (someArray) => {
+    const newArray = [];
+    someArray.filter((element) =>{
+        if (element.length >= 5){
+            newArray.push(element);
+        }
+    })
+    console.log("Exo 15: " + newArray)
+} 
+const myNinethArray = ["Hello", "World","Test", "Salut", "Yo"]
+longStringReturn(myNinethArray);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 16
@@ -320,7 +338,14 @@ firstElementString(mySeventhArray);
 // }, 0)
 
 // CODE ICI
-
+const sumElementArray = (someArray) => {
+    const somme = someArray.reduce((accumulateur, element) => {
+        return accumulateur + element;
+    })
+    console.log("Exo 16: " + somme)
+}
+const myTenthArray = [1,2,8,9]
+sumElementArray(myTenthArray)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 17
@@ -334,7 +359,13 @@ firstElementString(mySeventhArray);
 // console.log(monTableauConcat) // ["Hello", "World", "Test", "Salut"]
 
 // CODE ICI
-
+const sumTwoArrays = (someArray1, someArray2) =>{
+    const myArrayConcat = someArray1.concat(someArray2)
+    console.log("Exo 17: " + myArrayConcat)
+}
+const monTableau1 = ["Hello", "World"]
+const monTableau2 = ["Test", "Salut"]
+sumTwoArrays(monTableau1, monTableau2)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 18
@@ -344,7 +375,17 @@ firstElementString(mySeventhArray);
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la présence de la lettre "e". Indice : la méthode includes() permet de savoir si une string contient une lettre ou un mot.
 
 // CODE ICI
-
+const elementFilterArray = (someArray) => {
+    const newArray = [] 
+    someArray.filter((element) => {
+        if (element.includes("e")) {
+            newArray.push(element);
+        } 
+    })
+    console.log('Exo 18 : ' + newArray)
+}
+const myArray18 = ["Poulet", "Chat", "Chien", "Cheval"];
+elementFilterArray(myArray18)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 19
@@ -354,7 +395,21 @@ firstElementString(mySeventhArray);
 // Indice : il y a plusieurs façon de faire, soit avec un for, soit avec la méthode filter() une fois ça fait utilise la méthode sort() qui permet de trier un tableau.
 
 // CODE ICI
-
+const numberFilter = (someArray) => {
+    const newArray = []
+    someArray.filter((element) => {
+        if(element % 2 == 0) {
+            newArray.push(element)
+        }
+    
+    })
+    newArray.sort((a,b) => {
+        return a - b
+    });
+    console.log('Exo 19 : ' + newArray)  
+}
+const myArray19 = [ 36,2,10, 9, 6, 5, 6]
+numberFilter(myArray19)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 20
