@@ -15,7 +15,7 @@ const calc = (a, b) => {
     return (a * b) * 2;
 }
 
-console.log(`exo 1 : ${calc(2,3)}`);
+console.log(`Exo 1 : ${calc(2,3)}`);
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
 
@@ -31,7 +31,7 @@ const firstArrayElement = (someArray) => {
 }
 
 const myFirstArray = [1,2,3,4,5];
-console.log(`exo 2 : ${firstArrayElement(myFirstArray)}`);
+console.log(`Exo 2 : ${firstArrayElement(myFirstArray)}`);
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
 
@@ -47,9 +47,9 @@ const lastElementDelete = (someArray) => {
     return someArray.pop()
 }
 const mySecondArray = [1,2,3,4,5];
-console.log(`tableau avant appel de fonction : ${mySecondArray}`);
+console.log(`Exo 3 : tableau avant appel de fonction : ${mySecondArray}`);
 lastElementDelete(mySecondArray);
-console.log(`tableau après appel de fonction : ${mySecondArray}`);
+console.log(`Exo 3 : tableau après appel de fonction : ${mySecondArray}`);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 4
@@ -71,7 +71,7 @@ const arrayElementSum = (someArray) => {
     return sum;
 }
 const myThirdArray = [1,2,3,4,5];
-console.log(arrayElementSum(myThirdArray))
+console.log(`Exo 4 : ${arrayElementSum(myThirdArray)}`)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 5
@@ -88,11 +88,11 @@ console.log(arrayElementSum(myThirdArray))
 // CODE ICI
 const inversedString = (sentence) => {
     const myArray = sentence.split('');
-    console.log(myArray);
+    // console.log(myArray);
     const myInversedArray = myArray.reverse();
-    console.log(myInversedArray);
+    // console.log(myInversedArray);
     const newString = myInversedArray.join('')
-    console.log(newString)
+    return console.log(`Exo 5 : ${newString}`)
 
 }
 const myString = "Hello";
@@ -108,7 +108,7 @@ inversedString(myString);
 
 // CODE ICI
 const biggestNumber = (someArray) => {
-    console.log(Math.max(...someArray));
+    console.log(`Exo 6 : ${Math.max(...someArray)}`);
 }
 const monArray = [1, 2, 3];
 biggestNumber(monArray)
@@ -123,7 +123,7 @@ biggestNumber(monArray)
 
 // CODE ICI
 const smallestNumber = (someArray) => {
-    console.log(Math.min(...someArray));
+    console.log(`Exo 7 : ${Math.min(...someArray)}`);
 }
 const monTableau = [1, 2, 3];
 smallestNumber(monTableau)
@@ -142,16 +142,15 @@ smallestNumber(monTableau)
 // })
 
 // CODE ICI
-console.log("exo 8");
 const newString = (someString) => {
     const transitionTable = someString.split('');
-    console.log(transitionTable);
+    // console.log(transitionTable);
     const myTransitionTableFilter = transitionTable.filter((element) => {
         return element !=="e" && element !== "o"
     })
-    console.log(myTransitionTableFilter)
+    // console.log(myTransitionTableFilter)
     const transformedSentence = myTransitionTableFilter.join('');
-    console.log(transformedSentence)
+    return console.log(`Exo 8 : ${transformedSentence}`)
 }
 
 const sentenceToTransform = "Hello"
@@ -167,16 +166,12 @@ newString(sentenceToTransform);
 // console.log(monTableau.sort()) // [1, 2, 3]
 
 // CODE ICI
-console.log("exo 9");
-
 const sortArray = (someArray) => {
     someArray.sort((a,b) => a-b);
-    console.log(someArray);
+    return console.log(`Exo 9 : ${someArray}`);
 }
 
 let fourthArray = [5, 10, 8, 91, 1]
-// fourthArray.sort((a,b) => a-b);
-// console.log(fourthArray)
 sortArray(fourthArray);
 
 
@@ -196,14 +191,12 @@ sortArray(fourthArray);
 // console.log(monTableau) // ["Hello", "elloH", "lloHe", "loHel", "oHell"]
 
 // CODE ICI
-console.log("exo 10")
-
 const stringIntoArray = (someString) => {
     for (let i=0; i< someString.length; i++){
         const myStringRotation = someString.substring(i) + someString.substring(0, i);
         myNewTable.push(myStringRotation);   
     }
-    console.log(myNewTable)
+    return console.log(`Exo 10 : ${myNewTable}`)
 }
 
 const myNewString = "Hello";
@@ -224,13 +217,11 @@ stringIntoArray(myNewString)
 // })
 
 // CODE ICI
-console.log('exo 11')
-
 const elementAdding = (someArray) => {
     const myArrayToEdit = someArray.map((element) => {
         return element + 5; 
     } )
-    console.log(myArrayToEdit);
+    return console.log(`Exo 11 : ${myArrayToEdit}`);
 }
 
 const myFifthArray = [2,3,4];
@@ -248,14 +239,11 @@ elementAdding(myFifthArray);
 // })
 
 // CODE ICI
-console.log('exo 12'); 
-
 const elementLength = (someArray) => {
     const myTableLength = someArray.map((element)=>{
         return element.length;
     })
-    console.log(myTableLength)
-
+   return console.log(`Exo 12 : ${myTableLength}`)
 }
 
 const mySixthArray = ["Hello", "World", "Charlie", "Chocolate"];
@@ -275,13 +263,11 @@ elementLength(mySixthArray)
 // })
 
 // CODE ICI
-console.log("exo 13");
-
 const firstElementString = (someArray) => {
     const firstElementArray = someArray.map((element) => {
         return element.charAt(0);
     }) 
-    console.log(firstElementArray)
+    return console.log(`Exo 13 : ${firstElementArray}`)
 }
 
 const mySeventhArray = ["Hello", "World"];
@@ -300,7 +286,7 @@ const myNewTable2 = (someArray) => {
     const myLastArrayElement = someArray.map((element) => {
         return element.charAt(element.length-1);
     }) 
-    console.log("Exo 14 :" + myLastArrayElement)
+    return console.log("Exo 14 :" + myLastArrayElement)
 }
 
 const myEigthArray = ["Hello", "World"];
@@ -321,7 +307,7 @@ const longStringReturn = (someArray) => {
             newArray.push(element);
         }
     })
-    console.log("Exo 15: " + newArray)
+    return console.log("Exo 15: " + newArray)
 } 
 const myNinethArray = ["Hello", "World","Test", "Salut", "Yo"]
 longStringReturn(myNinethArray);
@@ -342,7 +328,7 @@ const sumElementArray = (someArray) => {
     const somme = someArray.reduce((accumulateur, element) => {
         return accumulateur + element;
     })
-    console.log("Exo 16: " + somme)
+    return console.log("Exo 16: " + somme)
 }
 const myTenthArray = [1,2,8,9]
 sumElementArray(myTenthArray)
@@ -361,7 +347,7 @@ sumElementArray(myTenthArray)
 // CODE ICI
 const sumTwoArrays = (someArray1, someArray2) =>{
     const myArrayConcat = someArray1.concat(someArray2)
-    console.log("Exo 17: " + myArrayConcat)
+    return console.log("Exo 17: " + myArrayConcat)
 }
 const monTableau1 = ["Hello", "World"]
 const monTableau2 = ["Test", "Salut"]
@@ -382,7 +368,7 @@ const elementFilterArray = (someArray) => {
             newArray.push(element);
         } 
     })
-    console.log('Exo 18 : ' + newArray)
+    return console.log('Exo 18 : ' + newArray)
 }
 const myArray18 = ["Poulet", "Chat", "Chien", "Cheval"];
 elementFilterArray(myArray18)
@@ -406,7 +392,7 @@ const numberFilter = (someArray) => {
     newArray.sort((a,b) => {
         return a - b
     });
-    console.log('Exo 19 : ' + newArray)  
+    return console.log('Exo 19 : ' + newArray)  
 }
 const myArray19 = [ 36,2,10, 9, 6, 5, 6]
 numberFilter(myArray19)
@@ -438,15 +424,62 @@ numberFilter(myArray19)
 
 
 
-
-
 // CODE ICI
 
+// Solution 1
+// const findShort = (someString) => {
+//     const array = someString.split(' ');
+//     const newArray = [];
+//     // console.log(array);
+//     for (let i = 0; i < array.length; i++) {
+//         // console.log(`${array[i]} and it's length is ${array[i].length}`)
+//         newArray.push(array[i].length);
+//     }
+//     // console.log(newArray);
+//     newArray.sort((a,b) => {
+//         return a-b;
+//     })
+//     return console.log(`Exo 20 : result is ${newArray[0]}`)
+// }
+// const string1 = "Prachett is the best author in the world"; 
+// const string2 = "The quick brown fox jumps over the lazy dog"; 
+// findShort(string2);
 
+//Solution 2 
+// const findShort = (someString) => {
+//     const array = someString.split(' ');
+//     const newArray = [];
+//     array.map((element) => {
+//         newArray.push(element.length);
+//         // console.log(newArray);
+//     }).sort((a,b)=>{
+//         return a-b
+//     })
+//     console.log(newArray)
+//     return console.log(newArray[0])
+// }
+// const string1 = "Prachett is the best author in the world"; 
+// const string2 = "The quick brown fox jumps over the lazy dog"; 
+// findShort(string1);
 
+//Solution 3
 
+const findShort = (someString) => {
+    let array = someString.split(' ')
+    let arrayLength = array.map((element) => {
+        return element.length;
+    })
+    let arraySort = arrayLength.sort((a,b) => {
+        return a - b;
+    })
+    return console.log(`Exo 20 : ${arraySort[0]}`)
+}
 
-
+const sentences = {
+    string1 : "Prachett is the best author in the world",
+    string2 : "The quick brown fox jumps over the lazy dog"
+}
+findShort(sentences.string2);
 
 
 
@@ -476,14 +509,38 @@ numberFilter(myArray19)
 
 // EXERCICE 21 
 
- //Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
+ //Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. 
+ //Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. 
+ //Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
 
- // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
+ // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer 
+ //une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
 
 
 // CODE ICI
 
+const anagram = (chaine1, chaine2) => {
+    const array1 = chaine1.split("");
+    // console.log(array1)
+    const array2 = chaine2.split("")
+    let array1Sort = array1.sort()
+    // console.log(array1Sort);
+    let array2Sort = array2.sort()
+    let newString1 = array1Sort.join()
+    let newString2 = array2Sort.join()
 
+    if(newString1 === newString2) {
+        return console.log(`Exo 21 : ${true}`)
+    }
+    else {
+        return console.log(`Exo 21 : ${false}`)
+    }
+}
+
+const string1 = "silent"
+const string2 = "listen"
+
+anagram(string1, string2)
 
 
 
