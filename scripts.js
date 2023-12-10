@@ -576,17 +576,45 @@ anagram(string1, string2)
 // Par exemple : 
 // removeDoubleLetters("google") // "gogle"
 // removeDoubleLetters("Hello World!") // "Helo World!"
-//Indice : Afin de supprimer les doubles lettres, vous devez parcourir la chaîne et comparer chaque caractère avec le caractère suivant. Si les deux caractères sont identiques, vous devez supprimer le deuxième caractère. Donc pour pouvoir comporaer chaque caractère avec le suivant, vous devez transformer la string en tableau. 
-// Indice 2 : Pour supprimer un élément d'un tableau vous pouvez utiliser la méthode splice() combiné à une boucle ou la méthode filter() qui permet de filtrer un tableau en fonction d'une condition.
+//Indice : Afin de supprimer les doubles lettres, vous devez parcourir la chaîne et comparer chaque caractère avec le 
+// caractère suivant. Si les deux caractères sont identiques, vous devez supprimer le deuxième caractère. Donc pour pouvoir 
+//comporaer chaque caractère avec le suivant, vous devez transformer la string en tableau. 
+// Indice 2 : Pour supprimer un élément d'un tableau vous pouvez utiliser la méthode splice() combiné à une boucle ou la méthode 
+//filter() qui permet de filtrer un tableau en fonction d'une condition.
 
 
 // CODE ICI
 
+// const removeDoubleLetters = (someString) => {
+//     let array = someString.split("")
+//     // console.log(array);
+//     for (i = 0; i<array.length; i++) {
+//         // console.log(array)
+//         if (array[i] === array[i+1]) {
+//             array.splice(i, 1)
+//             // console.log(array)
+//         }
+//     }
+//     console.log(array)
+//     let newString = array.join('')
+//     return console.log(`Exo 22 : ${newString}`)
 
+// }
+// const string3 = "google";
+// removeDoubleLetters(string3)
 
+const removeDoubleLetters = (someString) => {
+    const array = someString.split('')
+    let newArray = array.filter ((element, index) => {
+        return element !== array[index+1]
+    })
+    let newString = newArray.join('')
+    return console.log(`Exo 22 : ${newString}`)
 
+}
 
-
+const string3 = "google"
+removeDoubleLetters(string3)
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
@@ -620,13 +648,27 @@ anagram(string1, string2)
 
 // EXERCICE 23
 
- //Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
+ //Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme
+ // d'un numéro de téléphone.
 // Exemple :
 // createPhoneNumber([1,2,3,4,5,6,7,8,9,0]) // "(123) 456-7890"
-// Indice : Utilisez la méthode slice() pour découper le tableau en plusieurs morceaux. Puis utilisez la méthode join() pour transformer un tableau en string.
+// Indice : Utilisez la méthode slice() pour découper le tableau en plusieurs morceaux. Puis utilisez la méthode join() pour
+// transformer un tableau en string.
 
 // CODE ICI
+const createPhoneNumber = (someNumbers) => {
+    let firstThreeNumbers = someNumbers.slice(0,3)
+    let firstString = firstThreeNumbers.join('')
+    let nextThreeNumbers = someNumbers.slice(firstThreeNumbers.length, 6)
+    let nextString = nextThreeNumbers.join('')
+    let lastNumbers = someNumbers.slice(6, someNumbers.length)
+    let lastString = lastNumbers.join('')
 
+    return console.log("("+ firstString + ") " + nextString + "-" +lastString)
+}
+
+const numbers = [1,2,3,4,5,6,7,8,9,0];
+createPhoneNumber(numbers)
 
 
 
@@ -654,13 +696,19 @@ anagram(string1, string2)
 
 // EXERCICE 24
 
-//Écrivez une fonction nommée "findMissingLetter" qui prend en paramètre un tableau d'une série de lettres (en tant que chaînes de caractères) et qui renvoie la lettre manquante de la série. Si aucune lettre n'est manquante, la fonction doit renvoyer "undefined".
+//Écrivez une fonction nommée "findMissingLetter" qui prend en paramètre un tableau d'une série de lettres 
+//(en tant que chaînes de caractères) et qui renvoie la lettre manquante de la série. Si aucune lettre n'est manquante, 
+//la fonction doit renvoyer "undefined".
 // Exemple :
 // findMissingLetter(["a","b","c","d","f"]) // "e"
 // findMissingLetter(["O","Q","R","S"]) // "P"
 // Indice : Oubliez pas de boucler et vous pouvez utiliser la méthode charCodeAt() pour récupérer le code unicode d'un caractère. 
-// Indice 2 : Vous pouvez utiliser la méthode fromCharCode() pour récupérer un caractère à partir de son code unicode.  Exemple : String.fromCharCode(65) renvoie "A". Mais attention à refaire la boucle dans l'autre sens pour pouvoir comparer les codes unicode des caractères du tableau avec les codes unicode des caractères manquants.
-// Indice 3 : Il y a plus cas comparer les codes unicode des caractères du tableau avec les codes unicode des caractères manquants pour trouver le caractère manquant avec une condition if. Et retourner le caractère manquant avec un return et la méthode fromCharCode().
+// Indice 2 : Vous pouvez utiliser la méthode fromCharCode() pour récupérer un caractère à partir de son code unicode.  
+//Exemple : String.fromCharCode(65) renvoie "A". Mais attention à refaire la boucle dans l'autre sens pour pouvoir comparer 
+//les codes unicode des caractères du tableau avec les codes unicode des caractères manquants.
+// Indice 3 : Il y a plus cas comparer les codes unicode des caractères du tableau avec les codes unicode des caractères 
+//manquants pour trouver le caractère manquant avec une condition if. Et retourner le caractère manquant avec un return et 
+//la méthode fromCharCode().
 
 // CODE ICI
 
