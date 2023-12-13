@@ -664,11 +664,11 @@ const createPhoneNumber = (someNumbers) => {
     let lastNumbers = someNumbers.slice(6, someNumbers.length)
     let lastString = lastNumbers.join('')
 
-    return console.log("("+ firstString + ") " + nextString + "-" +lastString)
+    return "("+ firstString + ") " + nextString + "-" +lastString
 }
 
 const numbers = [1,2,3,4,5,6,7,8,9,0];
-createPhoneNumber(numbers)
+console.log(`Exo 23 : ${createPhoneNumber(numbers)}`)
 
 
 
@@ -711,11 +711,21 @@ createPhoneNumber(numbers)
 //la méthode fromCharCode().
 
 // CODE ICI
-
-
-
-
-
+const findMissingLetter = (someArray) => {
+    let unicodeArray = [];
+    for (i = 0; i < someArray.length; i++) {
+        let unicode = someArray[i].charCodeAt(0);
+            unicodeArray.push(unicode);
+    }
+    // console.log(unicodeArray)
+    for (let i = 0; i < unicodeArray.length; i++) {
+        if (unicodeArray[i] !== unicodeArray[i + 1] - 1) {
+            return String.fromCharCode(unicodeArray[i] + 1)
+            }
+        }
+}
+const array24 = ["O","Q","R","S"]
+console.log(`Exo 24 : Missing letter is ${findMissingLetter(array24)}`)
 
 
 //----------------------------------------------------------------------------------------------//
@@ -746,13 +756,32 @@ createPhoneNumber(numbers)
 // sortString(["Banana", "Orange", "Apple", "Mango"]) // ["Apple", "Banana", "Mango", "Orange"]
 // sortString(["lait", "beurre", "fromage", "yaourt"]) // ["beurre", "fromage", "lait", "yaourt"]
 
-//Indice : Vous pouvez utiliser la méthode sort() pour trier un tableau. Mais attention, par défaut la méthode sort() trie les éléments d'un tableau par ordre alphabétique en se basant sur les codes unicode des caractères. Donc si vous utilisez la méthode sort() sur un tableau de string, les éléments seront triés par ordre alphabétique en se basant sur les codes unicode des caractères. Par exemple, "Banana" sera considéré comme plus petit que "Orange" car le code unicode de "B" est plus petit que le code unicode de "O". Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort().
-// Indice 2 : Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort(). Cette fonction de comparaison prend deux paramètres (a et b) et renvoie un nombre négatif si a est plus petit que b, un nombre positif si a est plus grand que b et 0 si a est égal à b.
+//Indice : Vous pouvez utiliser la méthode sort() pour trier un tableau. Mais attention, par défaut la méthode sort() trie les éléments d'un 
+//tableau par ordre alphabétique en se basant sur les codes unicode des caractères. Donc si vous utilisez la méthode sort() sur un tableau de string, 
+//les éléments seront triés par ordre alphabétique en se basant sur les codes unicode des caractères. Par exemple, "Banana" sera considéré comme plus petit 
+//que "Orange" car le code unicode de "B" est plus petit que le code unicode de "O". Pour trier un tableau de string par ordre alphabétique en se basant sur 
+//l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort().
+// Indice 2 : Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de 
+//comparaison en paramètre de la méthode sort(). Cette fonction de comparaison prend deux paramètres (a et b) et renvoie un nombre négatif si a est plus petit que b, 
+//un nombre positif si a est plus grand que b et 0 si a est égal à b.
 
 // CODE ICI
 
 
+const alphaOrder = (someArray) => {
+    someArray.sort((a,b) => {
+        if (a.toLowerCase() > b.toLowerCase()) {
+            return 1
+        }
+        else if(a.toLowerCase() < b.toLowerCase()){
+            return -1
+        }
+    })
+    return console.log(`Exo 25 : ${someArray}`)
+}
 
+const array25 = ["Banana", "Orange", "Apple", "Mango"];
+alphaOrder(array25)
 
 
 
