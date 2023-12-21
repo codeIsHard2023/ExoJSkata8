@@ -959,7 +959,7 @@ const finalScore = (someArray) => {
   }
   return console.log(`Exo 30 : ${score}`);
 };
-const tableoFScores = [
+const tableOfScores = [
   "1:0",
   "2:0",
   "3:0",
@@ -971,7 +971,7 @@ const tableoFScores = [
   "2:4",
   "3:3",
 ];
-finalScore(tableoFScores);
+finalScore(tableOfScores);
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
@@ -1006,6 +1006,46 @@ sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "1
 //Indice : Tu dois utiliser une boucle for pour parcourir les tableaux et une condition if pour savoir si un élément est vide. Si un élément est vide tu dois le remplacer par 0. Et tu dois ajouter les éléments des deux tableaux à une variable tableau3 qui doit être initialisée à un tableau vide. Et tu dois retourner le tableau3 à la fin de la fonction.
 
 // CODE ICI
+const arraySum = (array1, array2) => {
+  let sum = [];
+  if (array1.length > array2.length) {
+    let dif = array1.length - array2.length;
+    for (i = 0; i < dif; i++) {
+      array2.push("0");
+    }
+  } else {
+    let dif = array2.length - array1.length;
+    for (i = 0; i < dif; i++) {
+      array1.push("0");
+    }
+  }
+  for (i = 0; i < array1.length; i++) {
+    sum.push(parseInt(array1[i]) + parseInt(array2[i]));
+  }
+  return sum;
+};
+const array31One = ["2", "7", "3", "8", "2"];
+const array31Two = ["2", "4", "9"];
+console.log("Exo 31 : " + arraySum(array31One, array31Two));
+
+const sumArr = (tableau1, tableau2) => {
+  let tableau3 = [];
+  for (let i = 0; i < tableau1.length; i++) {
+    if (tableau1[i] === "") {
+      tableau1[i] = 0;
+    }
+    if (tableau2[i] === "") {
+      tableau2[i] = 0;
+    }
+    tableau3.push(parseInt(tableau1[i]) + parseInt(tableau2[i]));
+  }
+  return tableau3;
+};
+
+console.log(
+  "Exo 31 proposed solution: " +
+    sumArr(["2", "7", "3", "8", "2"], ["2", "4", "9"])
+);
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
@@ -1027,27 +1067,6 @@ sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "1
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
-// const sortAnimals = (animals) => {
-//     let tableauDomestic = []
-//     let tableauWild = []
-//     let tableauFinal = []
-//     for (let i = 0; i < animals.length; i++) {
-//         if (animals[i].type === "Domestic") {
-//         tableauDomestic.push(animals[i].name)
-//         } else {
-//         tableauWild.push(animals[i].name)
-//         }
-//     }
-//     tableauDomestic.sort()
-//     tableauWild.sort()
-//     tableauWild.reverse()
-//     tableauFinal.push(tableauDomestic)
-//     tableauFinal.push(tableauWild)
-//     return tableauFinal
-//     }
-
-// console.log(sortAnimals(animals))
-
 // EXERCICE 32
 
 // Écris une fonction generatedCharacter qui crée de manière aléatoires des personnages donjon et dragon avec une classe et des noms de personnages. La fonction doit renvoyer un tableau de personnages.
@@ -1063,10 +1082,54 @@ sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "1
 // Indice : Tu dois créer un tableau vide et le remplir avec des tableaux qui contiennent un nom et une classe. Pour créer un nom aléatoire tu dois créer un tableau de noms et utiliser la méthode Math.random() pour récupérer un nom aléatoire dans le tableau de noms. Pour créer une classe aléatoire tu dois créer un tableau de classes et utiliser la méthode Math.random() pour récupérer une classe aléatoire dans le tableau de classes. Et tu dois faire une boucle pour créer 10 personnages.
 
 // CODE ICI
+const generatedCharacter = (array1, array2) => {
+  let generatedArray = [];
 
-// let tableauName = ["Aldric", "Dolgrin", "Ernst", "Gellius", "Gorstag", "Hagar", "Jozan", "Kef", "Leve", "Morn", "Perrin", "Reed", "Rulf", "Shandar", "Taman", "Urth"]
-// let tableauClass = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"]
+  for (i = 0; i < 10; i++) {
+    let intermediateArray = [];
+    let randomName = array1[Math.floor(Math.random() * array1.length)];
+    let randomClass = array2[Math.floor(Math.random() * array2.length)];
+    intermediateArray.push(randomName);
+    intermediateArray.push(randomClass);
+    generatedArray.push(intermediateArray);
+  }
+  return generatedArray;
+};
 
+let tableauName = [
+  "Aldric",
+  "Dolgrin",
+  "Ernst",
+  "Gellius",
+  "Gorstag",
+  "Hagar",
+  "Jozan",
+  "Kef",
+  "Leve",
+  "Morn",
+  "Perrin",
+  "Reed",
+  "Rulf",
+  "Shandar",
+  "Taman",
+  "Urth",
+];
+let tableauClass = [
+  "barbarian",
+  "bard",
+  "cleric",
+  "druid",
+  "fighter",
+  "monk",
+  "paladin",
+  "ranger",
+  "rogue",
+  "sorcerer",
+  "warlock",
+  "wizard",
+];
+console.log("Exo 32 : ");
+console.log(generatedCharacter(tableauName, tableauClass));
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 // const generatedCharacter= () => {
 //     let tableau = []
