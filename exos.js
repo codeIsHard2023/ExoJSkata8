@@ -180,7 +180,7 @@ console.log(arrayAdd(array11));
 
 // CODE ICI
 const arrayLength = (someArray) => {
-  const newArray = array12.map((element) => {
+  const newArray = someArray.map((element) => {
     return element.length;
   });
   return newArray;
@@ -212,7 +212,17 @@ console.log(firstLetter(array13));
 // Exemple : ["Hello", "World"] => ["o", "d"]
 
 // CODE ICI
+function lastLetter(someArray) {
+  const newArray = [];
+  someArray.map((element) => {
+    newArray.push(element[element.length - 1]);
+  });
+  return newArray;
+}
 
+const array14 = ["Hello", "World"];
+
+console.log(lastLetter(array14));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 15
@@ -221,7 +231,19 @@ console.log(firstLetter(array13));
 // Exemple : ["Hello", "World","Test", "Salut", "Yo"] => ["Hello", "World", "Salut"]
 
 // CODE ICI
+const findLongStrging = (someArray) => {
+  const newArray = [];
 
+  someArray.map((element) => {
+    if (element.length >= 5) {
+      newArray.push(element);
+    }
+  });
+  return newArray;
+};
+
+const array15 = ["Hello", "World", "Test", "Salut", "Yo", "Yamaha"];
+console.log(findLongStrging(array15));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 16
@@ -230,7 +252,16 @@ console.log(firstLetter(array13));
 // Exemple : [1, 2, 3] => 6
 
 // CODE ICI
+const sumElemArray = (someArray) => {
+  let sum = 0;
+  someArray.map((element) => {
+    sum = sum + element;
+  });
+  return sum;
+};
 
+const array16 = [5, 12, 3];
+console.log(sumElemArray(array16));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 17
@@ -239,7 +270,13 @@ console.log(firstLetter(array13));
 // Exemple : ["Hello", "World"] et ["Test", "Salut"] => ["Hello", "World", "Test", "Salut"]
 
 // CODE ICI
+const arraySum = (someArray1, someArray2) => {
+  return someArray1.concat(someArray2);
+};
+const firstArray17 = ["Hello", "World"];
+const secondArray17 = ["Test", "Salut"];
 
+console.log(arraySum(firstArray17, secondArray17));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 18
@@ -248,7 +285,17 @@ console.log(firstLetter(array13));
 // Exemple : ["Poulet", "Chat", "Chien", "Cheval"] => ["Poulet", "Chien", "Cheval"]
 
 // CODE ICI
-
+const findLetter = (someArray) => {
+  const newArray = [];
+  someArray.map((element) => {
+    if (element.includes("e")) {
+      newArray.push(element);
+    }
+  });
+  return newArray;
+};
+const array18 = ["Poulet", "Chat", "Chien", "Cheval"];
+console.log(findLetter(array18));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 19
@@ -257,7 +304,21 @@ console.log(firstLetter(array13));
 // Exemple : [ 2, 9, 6, 5, 6] => [2, 6, 6]
 
 // CODE ICI
+const sortNumbers = (someArray) => {
+  const newArray = [];
+  someArray.map((element) => {
+    if (element % 2 == 0) {
+      newArray.push(element);
+    }
+    newArray.sort((a, b) => {
+      return a - b;
+    });
+  });
+  return newArray;
+};
 
+const array19 = [12, 9, 6, 5, 6];
+console.log(sortNumbers(array19));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 20
@@ -271,7 +332,20 @@ console.log(firstLetter(array13));
 // findShort("The quick brown fox jumps over the lazy dog") // 3
 
 // CODE ICI
+const findShort = (someString) => {
+  const array = someString.split(" ");
+  const newArray = [];
+  array.map((element) => {
+    newArray.push(element.length);
+  });
+  newArray.sort((a, b) => {
+    return a - b;
+  });
+  return newArray[0];
+};
 
+const string20 = "The quick brown fox jumps over the lazy dog";
+console.log(findShort(string20));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 21
@@ -281,6 +355,22 @@ console.log(firstLetter(array13));
 //Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
 
 // CODE ICI
+const anagramCheck = (someString1, someString2) => {
+  const firstArray = someString1.split("").sort();
+  const secondArray = someString2.split("").sort();
+  if (someString1.length == someString2.length) {
+    if (firstArray.join("") == secondArray.join("")) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return " these word cannot be anagrams as their length is not equal";
+  }
+};
+const firstString21 = "listen";
+const secondString21 = "silant";
+console.log(anagramCheck(firstString21, secondString21));
 
 //----------------------------------------------------------------------------------------------//
 
