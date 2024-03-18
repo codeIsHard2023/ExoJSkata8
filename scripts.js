@@ -1279,8 +1279,16 @@ const scores = {
 
 const judgeFaces = (faces) => {
   // CODE ICI
+  const result = faces.reduce((acc, face) => {
+    if (face in scores) {
+      acc[face] = (acc[face] || 0) + scores[face];
+    } else {
+      acc[face] = scores[face];
+    }
+    return acc;
+  }, {});
+  return result;
 };
-
 console.log(judgeFaces(["😀", "😂", "😄", "😂", "😁", "😂", "😄", "😀"]));
 /*
 {
