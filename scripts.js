@@ -1218,3 +1218,92 @@ console.log(findMissingLetterNew(lettersArray));
 // }
 
 // console.log(findMissingLetter(["a","b","c","d","f"]))
+
+// Implémenter la fonction filterDuplicate qui prend un tableau en paramètre et qui doit renvoyer un tableau sans doublons.
+
+// Exemple du résultat attendu :
+// filterDuplicate([1, 2, 2, 3, 4, 4, 5]) // [1, 2, 3, 4, 5]
+
+// const filterDuplicate = (tableau) => {
+//     let tableau2 = []
+//     for (let i = 0; i < tableau.length; i++) {
+//         if (!tableau2.includes(tableau[i])) {
+//             tableau2.push(tableau[i])
+//         }
+//     }
+//     return tableau2
+// }
+
+// console.log(filterDuplicate([1, 2, 2, 3, 4, 4, 5]))
+
+// const filterDuplicate2 = (tableau) => {
+//     return tableau.filter((element, index) => {
+//         return tableau.indexOf(element) === index
+//     })
+// }
+// console.log(filterDuplicate2([1, 2, 2, 3, 4, 4, 5]))
+
+// const filterDuplicate3 = (tableau) => {
+//   const uniqueSet = new Set(tableau)
+//   const uniqueSetArray = Array.from(uniqueSet)
+//   return uniqueSetArray
+// }
+
+// console.log(filterDuplicate3([1, 2, 2, 3, 4, 4, 5]))
+
+// const filterDuplicate4 = (tableau) => {
+//   tableau.map((element, index) => {
+//     if (tableau.indexOf(element) !== index) {
+//       tableau.splice(index, 1)
+//     }
+//   }
+//   )
+//   return tableau
+// }
+
+// console.log(filterDuplicate4([1, 2, 2, 3, 4, 4, 5]))
+
+// EXERCICE 34
+
+// Écrivez une fonction judgeFaces qui prend un tableau de grimaces représentées par des chaînes de caractères Emoji en entrée et renvoie un objet avec les scores pour chaque type de grimace. Vous devez utiliser la méthode map et la méthode reduce
+
+// Exemple du résultat attendu :
+// judgeFaces(["😀", "😂", "😄", "😂", "😁", "😂", "😄", "😀"]) // { '😀': 10, '😁': 4, '😂': 9, '😃': 0, '😄': 2 }
+const scores = {
+  "😀": 5,
+  "😁": 4,
+  "😂": 3,
+  "😃": 2,
+  "😄": 1,
+};
+
+const judgeFaces = (faces) => {
+  // CODE ICI
+};
+
+console.log(judgeFaces(["😀", "😂", "😄", "😂", "😁", "😂", "😄", "😀"]));
+/*
+{
+  '😀': 10,
+  '😁': 4,
+  '😂': 9,
+  '😃': 0,
+  '😄': 2
+}
+*/
+
+//-----------------------------------------------SOLUTIONS-----------------------------------------------//
+
+/*
+const judgeFaces = (faces) => {
+  return faces.reduce((acc, face) => {
+    if (face in acc) {
+      acc[face] += scores[face];
+    } else {
+      acc[face] = scores[face];
+    }
+    return acc;
+  }, {});
+};
+
+*/
